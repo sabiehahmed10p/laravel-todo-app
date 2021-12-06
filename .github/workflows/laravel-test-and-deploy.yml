@@ -42,6 +42,6 @@ jobs:
         aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         application_name: Laravel-Todo-App
         environment_name: Laravel-todo-app-dev
-        version_label: ${{ github.head_ref }}
+        version_label: $(echo ${GITHUB_SHA} | cut -c1-8)
         region: us-east-2
         deployment_package: deploy.zip sss
