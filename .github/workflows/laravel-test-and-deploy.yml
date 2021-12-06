@@ -34,7 +34,7 @@ jobs:
         DB_DATABASE: database/database.sqlite
       run: vendor/bin/phpunit
     - name: Generate deployment package
-      run: zip -r deploy.zip . -x '*.git*' -x 'vendor' -x '.env'
+      run: zip -r deploy.zip . -x '*.git*' -x vendor/\* -x node_modules/\* -x '*.env'
     - name: Deploy to EB
       uses: einaregilsson/beanstalk-deploy@v19
       with:
