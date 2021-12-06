@@ -43,6 +43,6 @@ jobs:
         application_name: Laravel-Todo-App
         environment_name: laravel-todo-app-stage
         version_label: 1
-        use_existing_version_if_available: true
+        version_description: ${{github.SHA}}
         region: us-east-2
         deployment_package: deploy.zip
